@@ -14,9 +14,9 @@ struct Onboard1: View {
                 Spacer()
                 Image("Line-BG")
                     .frame(width:.infinity)
-                
             }
-            
+            .ignoresSafeArea()
+
             VStack{
                 Spacer()
                 HStack{
@@ -27,13 +27,13 @@ struct Onboard1: View {
                             VStack{
                                 Text("Hi there, my name is Xatya P.! You can call me Xatya. I’m a full-time freelancer who works from home. I love my job, but it comes with unique challenges that traditional employees don't face.")
                                 Text("As a freelancer, I have to find clients, manage my finances, and handle my own taxes. One of the biggest challenges I face is figuring out how to pay my taxes correctly. I know it's important, but I don't know where to start.")
-                                    .padding(.top)
+                                    .padding(.top,8.0)
                             }
-                                .padding(.vertical, 48.0)
-                                .padding(.horizontal, 32.0)
-                                .cornerRadius(16.0)
-                                .overlay(
-                                     RoundedRectangle(cornerRadius: 4).stroke(Color(.systemBlue), lineWidth: 4))
+                            .frame(maxWidth:.infinity)
+                            .padding(.vertical, 48.0)
+                            .padding(.horizontal, 32.0)
+                            .cornerRadius(16.0)
+                            .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(.systemBlue), lineWidth: 4))
                         }
                         .padding(.bottom,8.0)
                         
@@ -46,18 +46,17 @@ struct Onboard1: View {
                         .foregroundColor(Color(.white))
                         .cornerRadius(200.0)
                     }
-                   
                 }
             }
+            .ignoresSafeArea()
             .padding(.horizontal, 100.0)
         }
-        .padding()
     }
     
     struct Onboard1_Previews: PreviewProvider {
         static var previews: some View {
             Onboard1()
-                .previewInterfaceOrientation(.landscapeLeft)
+          .previewInterfaceOrientation(.landscapeLeft)
         }
     }
 }
