@@ -13,6 +13,8 @@
 		89D2C70529E17AE300E7CF72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D2C70429E17AE300E7CF72 /* Preview Assets.xcassets */; };
 		89D2C70C29E2A8F300E7CF72 /* Onboard1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C70B29E2A8F300E7CF72 /* Onboard1.swift */; };
 		89D2C70F29E4072700E7CF72 /* WhatPPh21View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C70E29E4072700E7CF72 /* WhatPPh21View.swift */; };
+		89D2C71229E4EF1400E7CF72 /* Onboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71129E4EF1400E7CF72 /* Onboard2.swift */; };
+		89D2C71429E4EFBD00E7CF72 /* Onboard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71329E4EFBD00E7CF72 /* Onboard3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		89D2C70429E17AE300E7CF72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89D2C70B29E2A8F300E7CF72 /* Onboard1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard1.swift; sourceTree = "<group>"; };
 		89D2C70E29E4072700E7CF72 /* WhatPPh21View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatPPh21View.swift; sourceTree = "<group>"; };
+		89D2C71129E4EF1400E7CF72 /* Onboard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard2.swift; sourceTree = "<group>"; };
+		89D2C71329E4EFBD00E7CF72 /* Onboard3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				89D2C70B29E2A8F300E7CF72 /* Onboard1.swift */,
+				89D2C71129E4EF1400E7CF72 /* Onboard2.swift */,
+				89D2C71329E4EFBD00E7CF72 /* Onboard3.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -160,9 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D2C70F29E4072700E7CF72 /* WhatPPh21View.swift in Sources */,
+				89D2C71429E4EFBD00E7CF72 /* Onboard3.swift in Sources */,
 				89D2C70029E17AE200E7CF72 /* ContentView.swift in Sources */,
 				89D2C70C29E2A8F300E7CF72 /* Onboard1.swift in Sources */,
 				89D2C6FE29E17AE200E7CF72 /* PayTaxApp.swift in Sources */,
+				89D2C71229E4EF1400E7CF72 /* Onboard2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

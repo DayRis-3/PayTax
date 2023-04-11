@@ -58,12 +58,12 @@ struct ContentView: View {
                 .background(Color(.systemBlue))
                 
             }
+            .foregroundColor(Color.white)
             
         } detail: {
                 Text("Detail")
         }
         .accentColor(Color.white)
-        .foregroundColor(Color.white)
     }
     
     fileprivate func buttonMenu(_ title: String) -> some View {
