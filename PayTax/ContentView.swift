@@ -64,7 +64,21 @@ struct ContentView: View {
             .foregroundColor(Color.white)
             
             if selectedMenuIndex == 0 {
-                Text("Detail")
+                ZStack {
+                    VStack {
+                        Spacer()
+                        Image("Xatya-empty")
+                    }
+                    .ignoresSafeArea()
+                    Text("To get started, you can click a button in the sidebar")
+                        .bold()
+                        .padding(.all,32)
+                        .background(Color.blue)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(14)
+                        .frame(width: 240)
+                        .offset(x:-100,y:-80)
+                }.ignoresSafeArea()
             } else if selectedMenuIndex ==  1 {
                 InputAnnualView()
             } else if selectedMenuIndex ==  2 {
@@ -103,25 +117,6 @@ struct ContentView: View {
 
     }
     
-//    fileprivate func buttonMenu(_ title: String) -> some View {
-//        return ZStack {
-//            RoundedRectangle(cornerRadius:14)
-//                .opacity(0.25)
-//
-//            HStack {
-//                Text(title)
-//                    .bold()
-//                    .padding(.vertical)
-//                Spacer()
-//                Image(systemName: "arrow.right.circle.fill")
-//            }
-//            .padding(.horizontal)
-//        }
-//        .frame(maxHeight: 50)
-//        .padding(.horizontal)
-//    }
-//}
-
 extension View {
     /// Sets background color and title color for UINavigationBar.
     func navigationBar(backgroundColor: Color, titleColor: Color) -> some View {
