@@ -11,7 +11,7 @@ import SwiftUI
 struct PayTaxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Onboard1()
         }
     }
 }

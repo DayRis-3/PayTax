@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var selectedMenuIndex = 0
+    
     var body: some View {
-        NavigationSplitView {
+        NavigationView {
             ZStack{
                 VStack {
                     HStack {
@@ -21,11 +23,11 @@ struct ContentView: View {
                             .background(Color.white)
                             .foregroundColor(Color(.black))
                             .cornerRadius(8)
+                            .padding(.vertical)
                     }
                     .padding(.horizontal)
                     
                     Divider()
-                        .padding(.vertical)
                     
                     Text("Count PPh21")
                         .font(.title2)
@@ -33,8 +35,8 @@ struct ContentView: View {
                         .frame(maxWidth:.infinity,alignment: .leading)
                         .padding(.leading)
                     
-                    buttonMenu("Input Anually")
-                    buttonMenu("Input Monthly")
+                    buttonMenu("Input Anually", 1)
+                    buttonMenu("Input Monthly", 2)
                     
                     Divider()
                         .padding(.vertical)
@@ -45,11 +47,12 @@ struct ContentView: View {
                         .frame(maxWidth:.infinity,alignment: .leading)
                         .padding(.leading)
                     
-                    buttonMenu("What is PPh 21?")
                     
-                    buttonMenu("What is NPNN?")
+                    buttonMenu("What is PPh 21?", 3)
                     
-                    buttonMenu("What is Progressive Tax?")
+                    buttonMenu("What is NPNN?", 4)
+                    
+                    buttonMenu("What is Progressive Tax?", 5)
                     
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
@@ -60,29 +63,64 @@ struct ContentView: View {
             }
             .foregroundColor(Color.white)
             
-        } detail: {
+            if selectedMenuIndex == 0 {
                 Text("Detail")
+            } else if selectedMenuIndex ==  1 {
+                InputAnnualView()
+            } else if selectedMenuIndex ==  2 {
+                InputMonthlyView()
+            } else if selectedMenuIndex ==  3 {
+                WhatPPh21View()
+            } else if selectedMenuIndex ==  4 {
+                WhatNPPNView()
+            } else if selectedMenuIndex ==  5 {
+                WhatProgressiveTaxView()
+            }
         }
         .accentColor(Color.white)
     }
     
-    fileprivate func buttonMenu(_ title: String) -> some View {
-        return ZStack {
-            RoundedRectangle(cornerRadius:14)
-                .opacity(0.25)
-            
-            HStack {
-                Text(title)
-                    .bold()
-                Spacer()
-                Image(systemName: "arrow.right.circle.fill")
+    fileprivate func buttonMenu(_ title: String, _ num: Int) -> some View {
+        return
+            Button(action:  {                     selectedMenuIndex = num}) {
+                ZStack {
+                    RoundedRectangle(cornerRadius:14)
+                                    .opacity(0.25)
+                    HStack {
+                        Text(title)
+                            .bold()
+                            .padding(.vertical)
+                        Spacer()
+                        Image(systemName: "arrow.right.circle.fill")
+                    }
+                    .padding(.horizontal)
+                }
             }
-            .padding(.horizontal)
+                .cornerRadius(14)
+                .frame(maxHeight: 50)
+                .padding(.horizontal)
         }
-        .frame(maxHeight: 50)
-        .padding(.horizontal)
+
     }
-}
+    
+//    fileprivate func buttonMenu(_ title: String) -> some View {
+//        return ZStack {
+//            RoundedRectangle(cornerRadius:14)
+//                .opacity(0.25)
+//
+//            HStack {
+//                Text(title)
+//                    .bold()
+//                    .padding(.vertical)
+//                Spacer()
+//                Image(systemName: "arrow.right.circle.fill")
+//            }
+//            .padding(.horizontal)
+//        }
+//        .frame(maxHeight: 50)
+//        .padding(.horizontal)
+//    }
+//}
 
 extension View {
     /// Sets background color and title color for UINavigationBar.

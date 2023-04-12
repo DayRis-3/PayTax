@@ -9,7 +9,8 @@ import SwiftUI
 
 struct WhatPPh21View: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        navigationTitle(title: "What is PPh 21?")
+        Text("PPh21")
     }
 }
 

@@ -15,6 +15,10 @@
 		89D2C70F29E4072700E7CF72 /* WhatPPh21View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C70E29E4072700E7CF72 /* WhatPPh21View.swift */; };
 		89D2C71229E4EF1400E7CF72 /* Onboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71129E4EF1400E7CF72 /* Onboard2.swift */; };
 		89D2C71429E4EFBD00E7CF72 /* Onboard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71329E4EFBD00E7CF72 /* Onboard3.swift */; };
+		89D2C71829E6898A00E7CF72 /* WhatNPPNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71729E6898A00E7CF72 /* WhatNPPNView.swift */; };
+		89D2C71A29E68E2500E7CF72 /* WhatProgressiveTaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71929E68E2500E7CF72 /* WhatProgressiveTaxView.swift */; };
+		89D2C71C29E68E4A00E7CF72 /* InputAnnualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71B29E68E4A00E7CF72 /* InputAnnualView.swift */; };
+		89D2C71F29E68E9100E7CF72 /* InputMonthlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C71E29E68E9100E7CF72 /* InputMonthlyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		89D2C70E29E4072700E7CF72 /* WhatPPh21View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatPPh21View.swift; sourceTree = "<group>"; };
 		89D2C71129E4EF1400E7CF72 /* Onboard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard2.swift; sourceTree = "<group>"; };
 		89D2C71329E4EFBD00E7CF72 /* Onboard3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard3.swift; sourceTree = "<group>"; };
+		89D2C71729E6898A00E7CF72 /* WhatNPPNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatNPPNView.swift; sourceTree = "<group>"; };
+		89D2C71929E68E2500E7CF72 /* WhatProgressiveTaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatProgressiveTaxView.swift; sourceTree = "<group>"; };
+		89D2C71B29E68E4A00E7CF72 /* InputAnnualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAnnualView.swift; sourceTree = "<group>"; };
+		89D2C71E29E68E9100E7CF72 /* InputMonthlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMonthlyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			children = (
 				89D2C6FD29E17AE200E7CF72 /* PayTaxApp.swift */,
 				89D2C6FF29E17AE200E7CF72 /* ContentView.swift */,
+				89D2C71D29E68E5000E7CF72 /* Count Tax View */,
 				89D2C71029E4072C00E7CF72 /* Learn More */,
 				89D2C70D29E2A8F900E7CF72 /* Onboarding */,
 				89D2C70129E17AE300E7CF72 /* Assets.xcassets */,
@@ -91,8 +100,19 @@
 			isa = PBXGroup;
 			children = (
 				89D2C70E29E4072700E7CF72 /* WhatPPh21View.swift */,
+				89D2C71729E6898A00E7CF72 /* WhatNPPNView.swift */,
+				89D2C71929E68E2500E7CF72 /* WhatProgressiveTaxView.swift */,
 			);
 			path = "Learn More";
+			sourceTree = "<group>";
+		};
+		89D2C71D29E68E5000E7CF72 /* Count Tax View */ = {
+			isa = PBXGroup;
+			children = (
+				89D2C71B29E68E4A00E7CF72 /* InputAnnualView.swift */,
+				89D2C71E29E68E9100E7CF72 /* InputMonthlyView.swift */,
+			);
+			path = "Count Tax View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +186,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D2C70F29E4072700E7CF72 /* WhatPPh21View.swift in Sources */,
+				89D2C71C29E68E4A00E7CF72 /* InputAnnualView.swift in Sources */,
 				89D2C71429E4EFBD00E7CF72 /* Onboard3.swift in Sources */,
 				89D2C70029E17AE200E7CF72 /* ContentView.swift in Sources */,
 				89D2C70C29E2A8F300E7CF72 /* Onboard1.swift in Sources */,
+				89D2C71A29E68E2500E7CF72 /* WhatProgressiveTaxView.swift in Sources */,
 				89D2C6FE29E17AE200E7CF72 /* PayTaxApp.swift in Sources */,
+				89D2C71F29E68E9100E7CF72 /* InputMonthlyView.swift in Sources */,
+				89D2C71829E6898A00E7CF72 /* WhatNPPNView.swift in Sources */,
 				89D2C71229E4EF1400E7CF72 /* Onboard2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

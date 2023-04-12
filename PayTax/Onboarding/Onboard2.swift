@@ -13,7 +13,7 @@ struct Onboard2: View {
             VStack{
                 Spacer()
                 Image("Line-BG")
-                    .frame(width:.infinity)
+                    .frame(maxWidth:.infinity)
             }
             .ignoresSafeArea()
             
@@ -35,20 +35,24 @@ struct Onboard2: View {
                         }
                         .padding(.bottom,8.0)
                         
-                        Button("􀰓 Next") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14.0)
-                        .background(Color(.systemBlue))
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(200.0)
-                        .padding(.bottom,200.0)
+                        NavigationLink (
+                            destination: Onboard3()
+                            ,label: {
+                                Text("􀰓 Next")
+                                    .bold()
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14.0)
+                                .background(Color(.systemBlue))
+                                .foregroundColor(Color(.white))
+                                .cornerRadius(200.0)
+                            }
+                        )
                     }
+                    .padding(.bottom,400)
                 }
             }
             .ignoresSafeArea()
-            .padding(.horizontal, 100.0)
+            .padding(.trailing, 100.0)
         }
     }
 }

@@ -13,13 +13,13 @@ struct Onboard3: View {
             VStack{
                 Spacer()
                 Image("Line-BG")
-                    .frame(width:.infinity)
+                    .frame(maxWidth:.infinity)
             }
             .ignoresSafeArea()
             
             VStack{
                 Spacer()
-                HStack{
+                HStack {
                     Image("Xatya-3")
                     VStack{
                         
@@ -39,20 +39,24 @@ struct Onboard3: View {
                         }
                         .padding(.bottom,8.0)
                         
-                        Button("􀰓 Let’s count your Income Tax!") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14.0)
-                        .background(Color(.systemBlue))
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(200.0)
-                        .padding(.bottom,200.0)
+                        NavigationLink (
+                            destination: ContentView()
+                            ,label: {
+                                Text("􀰓 Let’s count your Income Tax!")
+                                    .bold()
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14.0)
+                                .background(Color(.systemBlue))
+                                .foregroundColor(Color(.white))
+                                .cornerRadius(200.0)
+                            }
+                        )
                     }
+                    .padding(.bottom,500)
                 }
             }
             .ignoresSafeArea()
-            .padding(.horizontal, 100.0)
+            .padding(.trailing, 100.0)
         }
     }
 }
