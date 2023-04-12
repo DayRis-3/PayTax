@@ -92,6 +92,8 @@ struct ContentView: View {
             }
         }
         .accentColor(Color.white)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: EmptyView())
     }
     
     fileprivate func buttonMenu(_ title: String, _ num: Int) -> some View {
@@ -114,7 +116,6 @@ struct ContentView: View {
                 .frame(maxHeight: 50)
                 .padding(.horizontal)
         }
-
     }
     
 extension View {

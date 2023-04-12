@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Line-BG.svg",
+      "filename" : "Line-BG.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Line-BG@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Line-BG@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
