@@ -36,8 +36,10 @@ struct WhatPPh21View: View {
             }.frame(maxWidth:.infinity,alignment: .leading)
                 .padding(.top)
             Spacer()
-        }.padding(.horizontal,40)
+        }
+            .padding(.horizontal,40)
             .padding(.top)
+            .navigationTitle("Learn More")
     }
 }
 
