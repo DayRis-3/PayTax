@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedMenuIndex = 0
+@State var selectedMenuIndex = 0
     
     var body: some View {
         NavigationView {
