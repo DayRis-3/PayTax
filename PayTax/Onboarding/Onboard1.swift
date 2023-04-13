@@ -13,7 +13,7 @@ struct Onboard1: View {
             ZStack {
                 VStack{
                     Spacer()
-                    Image("Line-BG")
+                    Image("Line-BG-Disclaimer")
                         .frame(maxWidth:.infinity)
                 }
                 .ignoresSafeArea()

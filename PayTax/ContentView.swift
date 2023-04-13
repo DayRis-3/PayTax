@@ -27,7 +27,8 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                     
-                    Divider()
+                    Divider().overlay(.white)
+                        .padding(.vertical,8)
                     
                     Text("Count PPh21")
                         .font(.title2)
@@ -37,9 +38,10 @@ struct ContentView: View {
                     
                     buttonMenu("Input Anually", 1)
                     buttonMenu("Input Monthly", 2)
+                        .padding(.bottom,8)
                     
-                    Divider()
-                        .padding(.vertical)
+                    Divider().overlay(.white)
+                        .padding(.vertical,8)
                     
                     Text("Learn More")
                         .font(.title2)
@@ -98,7 +100,7 @@ struct ContentView: View {
     
     fileprivate func buttonMenu(_ title: String, _ num: Int) -> some View {
         return
-            Button(action:  {                     selectedMenuIndex = num}) {
+            Button(action: {selectedMenuIndex = num}) {
                 ZStack {
                     RoundedRectangle(cornerRadius:14)
                                     .opacity(0.25)

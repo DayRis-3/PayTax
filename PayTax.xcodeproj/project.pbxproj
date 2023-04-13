@@ -69,9 +69,9 @@
 			children = (
 				89D2C6FD29E17AE200E7CF72 /* PayTaxApp.swift */,
 				89D2C6FF29E17AE200E7CF72 /* ContentView.swift */,
+				89D2C70D29E2A8F900E7CF72 /* Onboarding */,
 				89D2C71D29E68E5000E7CF72 /* Count Tax View */,
 				89D2C71029E4072C00E7CF72 /* Learn More */,
-				89D2C70D29E2A8F900E7CF72 /* Onboarding */,
 				89D2C70129E17AE300E7CF72 /* Assets.xcassets */,
 				89D2C70329E17AE300E7CF72 /* Preview Content */,
 			);
