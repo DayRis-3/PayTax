@@ -10,24 +10,19 @@ import SwiftUI
 struct WhatProgressiveTaxView: View {
     var body: some View {
         VStack{
-            Text("What is Progressive Tax?")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color.blue)
-                .padding(.vertical)
-                .frame(maxWidth:.infinity,alignment: .leading)
             VStack {
                 Text("Progressive Tax Definition")
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(Color.gray)
                     .padding(.bottom)
                     .frame(maxWidth:.infinity,alignment: .leading)
+                    .padding(.top)
                 Text("The progressive rate tax system in Indonesia is a tax system where the tax rate increases as the taxable income increases. In other words, individuals with higher income levels will pay a higher tax rate than those with lower income levels. This is designed to create a fair tax system where those who can afford to pay more taxes contribute a higher proportion of their income.\n\nIt's important to note that the taxable income includes all types of income, including employment income, business income, investment income, and other types of income. Additionally, certain deductions and exemptions may be available to taxpayers, which can reduce their taxable income and lower their tax liability.\n\nThe Indonesian government uses the revenue generated from the progressive tax system to fund various public services, including healthcare, education, infrastructure development, and social welfare programs.")
             }.frame(maxWidth:.infinity,alignment: .leading)
             VStack {
                 Text("Progressive Tax Bracket")
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(Color.gray)
                     .padding(.bottom)
@@ -40,7 +35,7 @@ struct WhatProgressiveTaxView: View {
         }
             .padding(.horizontal,40)
             .padding(.top)
-            .navigationTitle("Learn More")
+            .navigationTitle("What is Progressive Tax?")
     }
 }
 

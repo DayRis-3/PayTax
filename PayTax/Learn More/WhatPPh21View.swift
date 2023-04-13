@@ -10,24 +10,19 @@ import SwiftUI
 struct WhatPPh21View: View {
     var body: some View {
         VStack{
-            Text("What is PPh 21?")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color.blue)
-                .padding(.vertical)
-                .frame(maxWidth:.infinity,alignment: .leading)
             VStack {
                 Text("PPh 21 Definition")
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(Color.gray)
                     .padding(.bottom)
                     .frame(maxWidth:.infinity,alignment: .leading)
+                    .padding(.top)
                 Text("PPh21 is an acronym for \"Pajak Penghasilan 21\" in Indonesian, which translates to \"Income Tax 21\". It is a type of income tax that is applicable to individuals who receive income from employment, whether it is in the form of salary, wages, bonuses, or other types of compensation.\n\nEmployers are responsible for withholding and remitting PPh21 on behalf of their employees to the Indonesian tax authorities. The withholding amount is calculated based on the employee's taxable income, taking into account any tax deductions and exemptions that may apply.\n\nIn summary, PPh21 is an income tax that is applicable to individuals who receive income from employment in Indonesia, and is calculated based on a progressive tax rate system. Employers are responsible for withholding and remitting PPh21 on behalf of their employees.")
             }.frame(maxWidth:.infinity,alignment: .leading)
             VStack {
                 Text("Freelancer’s PPh 21 Difference")
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(Color.gray)
                     .padding(.bottom)
@@ -39,7 +34,7 @@ struct WhatPPh21View: View {
         }
             .padding(.horizontal,40)
             .padding(.top)
-            .navigationTitle("Learn More")
+            .navigationTitle("What is PPh21?")
     }
 }
 

@@ -26,19 +26,14 @@ struct InputAnnualView: View {
     
     var body: some View {
         VStack{
-            Text("Input Annually")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color.blue)
-                .padding(.vertical)
-                .frame(maxWidth:.infinity,alignment: .leading)
             VStack {
                 VStack {
                     Text("Annual Gross Income (In Rupiah)")
-                        .font(.title3)
+                        .font(.body)
                         .fontWeight(.bold)
                         .foregroundColor(Color.gray)
                         .frame(maxWidth:.infinity,alignment: .leading)
+                        .padding(.top)
                     TextField("e.g 100000000", text: $annualIncome)
                         .keyboardType(.numberPad)
                         .textContentType(.oneTimeCode)
@@ -52,7 +47,7 @@ struct InputAnnualView: View {
                         .padding(.bottom)
                     
                     Text("Use NPPN")
-                        .font(.title3)
+                        .font(.body)
                         .fontWeight(.bold)
                         .foregroundColor(Color.gray)
                         .frame(maxWidth:.infinity,alignment: .leading)
@@ -70,7 +65,7 @@ struct InputAnnualView: View {
                         .padding(.bottom)
                     
                     Text("Current Status")
-                        .font(.title3)
+                        .font(.body)
                         .fontWeight(.bold)
                         .foregroundColor(Color.gray)
                         .frame(maxWidth:.infinity,alignment: .leading)
@@ -109,7 +104,7 @@ struct InputAnnualView: View {
         }
             .padding(.horizontal,40)
             .padding(.top)
-            .navigationTitle("Count PPh21")
+            .navigationTitle("Input Annually")
     }
 }
 

@@ -60,7 +60,7 @@ struct ContentView: View {
                 .frame(maxHeight: .infinity, alignment: .top)
                 .navigationTitle("PayTax")
                 .navigationBar(backgroundColor: .blue, titleColor: .white)
-                .background(Color(.systemBlue))
+                .background(Color.blue)
                 
             }
             .foregroundColor(Color.white)
