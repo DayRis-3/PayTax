@@ -23,7 +23,7 @@ struct InputMonthlyView: View {
     @State private var monthlyIncome11 = ""
     @State private var monthlyIncome12 = ""
 
-    private let numberOnlyFormatter: NumberFormatter = {
+    private let numberOnly2Formatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.maximumFractionDigits = 0
