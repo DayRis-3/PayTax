@@ -30,9 +30,8 @@ struct InputMonthlyView: View {
             return formatter
         }()
     
-    @State private var selectedNppn = "Yes"
-        let nppn = ["Yes", "No"]
-    
+    @State private var nppn = true
+
     @State private var selectedStatus = "Not Married (TK/0)"
         let statuses = ["Not Married (TK/0)", "Married No Kids (K/0)", "Married 1 Kid (K/1)", "Married 2 Kids (K/2)", "Married >3 Kids (K/3)"]
     
@@ -161,14 +160,13 @@ struct InputMonthlyView: View {
                         }
                 }
             
-            Section ("Use NPPN") {
-                Picker("NPPN",
-                       selection:$selectedNppn) {
-                    ForEach(nppn, id: \.self) {
-                        Text($0)}}
+            Section ("Use NPPN?") {
+                Toggle(isOn: $nppn) {
+                    Text("NPPN")
+                }
             }
-            Section ("Current Statuses") {
-                Picker("Current Status", selection: $selectedStatus) {
+            Section ("Current Status") {
+                Picker("Your Status", selection: $selectedStatus) {
                     ForEach(statuses, id: \.self) {
                         Text($0)}}}
             
