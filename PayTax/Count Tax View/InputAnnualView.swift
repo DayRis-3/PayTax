@@ -25,15 +25,9 @@ struct InputAnnualView: View {
         let statuses = ["Not Married (TK/0)", "Married No Kids (K/0)", "Married 1 Kid (K/1)", "Married 2 Kids (K/2)", "Married >3 Kids (K/3)"]
     
     var body: some View {
-        VStack{
-            VStack {
-                VStack {
-                    Text("Annual Gross Income (In Rupiah)")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.gray)
-                        .frame(maxWidth:.infinity,alignment: .leading)
-                        .padding(.top)
+        VStack {
+            Form {
+                Section ("Annual Gross Income (In Rupiah)"){
                     TextField("e.g 100000000", text: $annualIncome)
                         .keyboardType(.numberPad)
                         .textContentType(.oneTimeCode)
@@ -43,68 +37,43 @@ struct InputAnnualView: View {
                                 self.annualIncome = filtered
                             }
                         }
-                        .textFieldStyle(.roundedBorder)
-                        .padding(.bottom)
-                    
-                    Text("Use NPPN")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.gray)
-                        .frame(maxWidth:.infinity,alignment: .leading)
-                     Picker("NPPN",
-                            selection:$selectedNppn) {
-                            ForEach(nppn, id: \.self) {
-                                Text($0)}}
-                            .frame(maxWidth:.infinity,alignment: .leading)
-                            .pickerStyle(.segmented)
-                    Text("You should use NPPN if you are a freelancer!")
-                        .font(.caption)
-                        .foregroundColor(Color.blue)
-                        .frame(maxWidth:.infinity,alignment: .leading)
-                        .padding(.top,4)
-                        .padding(.bottom)
-                    
-                    Text("Current Status")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.gray)
-                        .frame(maxWidth:.infinity,alignment: .leading)
-                    Picker("Status",
-                           selection:$selectedStatus) {
-                           ForEach(statuses, id: \.self) {
-                               Text($0)}}
-                           .frame(maxWidth:.infinity,alignment: .leading)
-                           .pickerStyle(.segmented)
-                    Spacer()
-                    VStack {
-                        Text("Results")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth:.infinity,alignment: .leading)
-                            .padding(.bottom,24)
-                        HStack {
-                            Text("Tax that you need to pay annually (PPh 21)")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.white)
-                            Spacer()
-                            Text("Rp. 0")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.white)
-                        }
-                    }
-                    .padding(.horizontal,32)
-                    .padding(.vertical,24)
-                    .background(Color.blue)
-                    .cornerRadius(8)
                 }
-            }.frame(maxWidth:.infinity,alignment: .leading)
+                Section ("Use NPPN") {
+                    Picker("NPPN",
+                           selection:$selectedNppn) {
+                        ForEach(nppn, id: \.self) {
+                            Text($0)}}
+                }
+                Section ("Current Statuses") {
+                    Picker("Current Status", selection: $selectedStatus) {
+                        ForEach(statuses, id: \.self) {
+                            Text($0)}}}
+                
+            }
+
+            VStack {
+                Text("Results")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.blue)
+                    .frame(maxWidth:.infinity,alignment: .leading)
+                    .padding(.bottom,4)
+                HStack {
+                    Text("Tax that you need to pay annually (PPh 21)")
+                        .font(.title3)
+                        .foregroundColor(Color.blue)
+                    Spacer()
+                    Text("Rp. 0")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.blue)
+                }
+            }
+            .padding(.horizontal,32)
+            .padding(.vertical,24)
+            .cornerRadius(8)
         }
-            .padding(.horizontal,40)
-            .padding(.top)
-            .navigationTitle("Input Annually")
+        .navigationTitle("Input Annually")
     }
 }
 
