@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Line-BG-Disclaimer.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
