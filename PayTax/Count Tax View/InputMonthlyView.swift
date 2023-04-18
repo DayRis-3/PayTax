@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import Foundation
 
 struct InputMonthlyView: View {
     
@@ -23,17 +24,34 @@ struct InputMonthlyView: View {
     @State private var monthlyIncome11 = ""
     @State private var monthlyIncome12 = ""
 
-    private let numberOnly2Formatter: NumberFormatter = {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            formatter.maximumFractionDigits = 0
-            return formatter
-        }()
-    
     @State private var nppn = true
-
+        
     @State private var selectedStatus = "Not Married (TK/0)"
         let statuses = ["Not Married (TK/0)", "Married No Kids (K/0)", "Married 1 Kid (K/1)", "Married 2 Kids (K/2)", "Married >3 Kids (K/3)"]
+    
+    func calculateAnnualTax() -> Double {
+        let monthlyIncomes = [monthlyIncome1, monthlyIncome2, monthlyIncome3, monthlyIncome4, monthlyIncome5, monthlyIncome6, monthlyIncome7, monthlyIncome8, monthlyIncome9, monthlyIncome10, monthlyIncome11, monthlyIncome12].compactMap { Int($0) }
+        let totalIncome = monthlyIncomes.reduce(0, +)
+        let nppnMultiplier = nppn ? 0.5 : 1.0
+        let statusDeduction = selectedStatus == "Not Married (TK/0)" ? 54000000 : selectedStatus == "Married No Kids (K/0)" ? 58500000 : selectedStatus == "Married 1 Kid (K/1)" ? 63000000 : selectedStatus == "Married 2 Kids (K/2)" ? 67500000 : 72000000
+        let taxableIncomeValue = Double(totalIncome) * nppnMultiplier - Double(statusDeduction)
+        let tax: Double
+        switch taxableIncomeValue {
+        case ..<0:
+            tax = 0
+        case ..<60000000:
+            tax = taxableIncomeValue * 0.05
+        case ..<250000000:
+            tax = taxableIncomeValue * 0.15 - 6000000
+        case ..<500000000:
+            tax = taxableIncomeValue * 0.25 - 31000000
+        case ..<5000000000:
+            tax = taxableIncomeValue * 0.3 - 56000000
+        default:
+            tax = taxableIncomeValue * 0.35 - 306000000
+        }
+        return max(0, tax)
+    }
     
     var body: some View {
         VStack {
@@ -181,15 +199,27 @@ struct InputMonthlyView: View {
                     .foregroundColor(Color.blue)
                     .frame(maxWidth:.infinity,alignment: .leading)
                     .padding(.bottom,4)
+                
                 HStack {
                     Text("Tax that you need to pay annually (PPh 21)")
                         .font(.title3)
                         .foregroundColor(Color.blue)
+                    
                     Spacer()
-                    Text("Rp. 0")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.blue)
+                    
+                    let payTax = calculateAnnualTax()
+
+                    if payTax <= 0 {
+                        Text("You don't have to pay tax")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.blue)
+                    } else {
+                        Text("Rp. \(payTax, specifier: "%.2f")")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.blue)
+                    }
                 }
             }
             .padding(.horizontal,32)

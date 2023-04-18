@@ -18,43 +18,26 @@ struct InputAnnualView: View {
     @State private var selectedStatus = "Not Married (TK/0)"
         let statuses = ["Not Married (TK/0)", "Married No Kids (K/0)", "Married 1 Kid (K/1)", "Married 2 Kids (K/2)", "Married >3 Kids (K/3)"]
     
-    func taxableIncome (_ annualIncome: String, _ nppn: Bool, _ selectedStatus: String) -> Double {
-        var nppnDouble : Double
-        var statusDouble : Double
-        if nppn == true {
-            nppnDouble=0.5
-        } else {
-            nppnDouble=1
+    func calculateAnnualTax() -> Double {
+        guard let totalIncome = Double(annualIncome) else { return 0 }
+        let nppnMultiplier = nppn ? 0.5 : 1.0
+        let statusDeduction: Double
+        switch selectedStatus {
+        case "Not Married (TK/0)": statusDeduction = 54000000
+        case "Married No Kids (K/0)": statusDeduction = 58500000
+        case "Married 1 Kid (K/1)": statusDeduction = 63000000
+        case "Married 2 Kids (K/2)": statusDeduction = 67500000
+        default: statusDeduction = 72000000
         }
-        if selectedStatus=="Not Married (TK/0)"{
-            statusDouble=54_000_000
-        } else if selectedStatus=="Married No Kids (K/0)"{
-            statusDouble=58_500_000
-        } else if selectedStatus=="Married 1 Kid (K/1)"{
-            statusDouble=63_000_000
-        } else if selectedStatus=="Married 2 Kids (K/2)"{
-            statusDouble=67_500_000
-        } else {
-            statusDouble=72_000_000
-        }
-        return ((Double(annualIncome) ?? 54000000) * nppnDouble) - statusDouble
-    }
-    
-    func calculateAnnualTax(_ annualIncome: String, _ nppn: Bool, _ selectedStatus: String) -> Double {
-        let taxableIncomeValue = taxableIncome(annualIncome, nppn, selectedStatus)
+        let taxableIncomeValue = totalIncome * nppnMultiplier - statusDeduction
         let tax: Double
-        if taxableIncomeValue <= 0 {
-            tax = 0
-        } else if taxableIncomeValue <= 60000000 {
-            tax = taxableIncomeValue * 0.05
-        } else if taxableIncomeValue <= 250000000 {
-            tax = (taxableIncomeValue * 0.15) - 6000000
-        } else if taxableIncomeValue <= 500000000 {
-            tax = (taxableIncomeValue * 0.25) - 31000000
-        } else if taxableIncomeValue <= 5000000000 {
-            tax = (taxableIncomeValue * 0.3) - 56000000
-        } else {
-            tax = (taxableIncomeValue * 0.35) - 306000000
+        switch taxableIncomeValue {
+        case ..<0: tax = 0
+        case ..<60000000: tax = taxableIncomeValue * 0.05
+        case ..<250000000: tax = taxableIncomeValue * 0.15 - 6000000
+        case ..<500000000: tax = taxableIncomeValue * 0.25 - 31000000
+        case ..<5000000000: tax = taxableIncomeValue * 0.3 - 56000000
+        default: tax = taxableIncomeValue * 0.35 - 306000000
         }
         return max(0, tax)
     }
@@ -98,13 +81,15 @@ struct InputAnnualView: View {
                         .foregroundColor(Color.blue)
                     Spacer()
                     
-        if taxableIncome(annualIncome, nppn, selectedStatus) <= 0 {
+                    let payTax = calculateAnnualTax()
+
+                    if payTax <= 0 {
                         Text("You don't have to pay tax")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.blue)
                     } else {
-                        Text("Rp. \(calculateAnnualTax(annualIncome,nppn,selectedStatus),specifier: "%.2f")")
+                        Text("Rp. \(payTax, specifier: "%.2f")")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.blue)
