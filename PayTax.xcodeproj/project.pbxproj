@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8982CF9E29EE9D1900E7661A /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982CF9D29EE9D1900E7661A /* EmptyStateView.swift */; };
+		8982CFA229EEA92200E7661A /* iPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982CFA129EEA92200E7661A /* iPadView.swift */; };
+		8982CFA429EEA9D100E7661A /* iPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982CFA329EEA9D100E7661A /* iPhoneView.swift */; };
 		89D2C6FE29E17AE200E7CF72 /* PayTaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C6FD29E17AE200E7CF72 /* PayTaxApp.swift */; };
 		89D2C70029E17AE200E7CF72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D2C6FF29E17AE200E7CF72 /* ContentView.swift */; };
 		89D2C70229E17AE300E7CF72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D2C70129E17AE300E7CF72 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8982CF9D29EE9D1900E7661A /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		8982CFA129EEA92200E7661A /* iPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadView.swift; sourceTree = "<group>"; };
+		8982CFA329EEA9D100E7661A /* iPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneView.swift; sourceTree = "<group>"; };
 		89D2C6FA29E17AE200E7CF72 /* PayTax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayTax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D2C6FD29E17AE200E7CF72 /* PayTaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTaxApp.swift; sourceTree = "<group>"; };
 		89D2C6FF29E17AE200E7CF72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 			children = (
 				89D2C6FD29E17AE200E7CF72 /* PayTaxApp.swift */,
 				89D2C6FF29E17AE200E7CF72 /* ContentView.swift */,
+				8982CFA129EEA92200E7661A /* iPadView.swift */,
+				8982CFA329EEA9D100E7661A /* iPhoneView.swift */,
+				8982CF9D29EE9D1900E7661A /* EmptyStateView.swift */,
 				89D2C70D29E2A8F900E7CF72 /* Onboarding */,
 				89D2C71D29E68E5000E7CF72 /* Count Tax View */,
 				89D2C71029E4072C00E7CF72 /* Learn More */,
@@ -191,10 +200,13 @@
 				89D2C70029E17AE200E7CF72 /* ContentView.swift in Sources */,
 				89D2C70C29E2A8F300E7CF72 /* Onboard1.swift in Sources */,
 				89D2C71A29E68E2500E7CF72 /* WhatProgressiveTaxView.swift in Sources */,
+				8982CFA429EEA9D100E7661A /* iPhoneView.swift in Sources */,
+				8982CFA229EEA92200E7661A /* iPadView.swift in Sources */,
 				89D2C6FE29E17AE200E7CF72 /* PayTaxApp.swift in Sources */,
 				89D2C71F29E68E9100E7CF72 /* InputMonthlyView.swift in Sources */,
 				89D2C71829E6898A00E7CF72 /* WhatNPPNView.swift in Sources */,
 				89D2C71229E4EF1400E7CF72 /* Onboard2.swift in Sources */,
+				8982CF9E29EE9D1900E7661A /* EmptyStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
